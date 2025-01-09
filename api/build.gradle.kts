@@ -11,7 +11,6 @@ publishing {
     publications {
         create<MavenPublication>("ktgen-api") {
             from(components["java"])
-            artifactId = "ktgen-api"
         }
     }
 }

@@ -8,9 +8,15 @@ plugins {
     `maven-publish`
 }
 
+subprojects {
+    apply {
+        plugin("java")
+        plugin("kotlin")
+    }
+}
+
 allprojects {
     apply {
-        plugin("org.gradle.kotlin.kotlin-dsl")
         plugin("maven-publish")
     }
 
@@ -22,12 +28,6 @@ allprojects {
         toolchain {
             languageVersion.set(JavaLanguageVersion.of(8))
         }
-    }
-}
-
-subprojects {
-    base {
-        archivesName.set("${rootProject.name}-${project.name}")
     }
 }
 

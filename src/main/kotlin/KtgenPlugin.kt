@@ -23,18 +23,7 @@ class KtgenPlugin : Plugin<Project> {
         }
 
         val ktgenTask = project.tasks.register("ktgen", KtgenTask::class.java) {
-            inputFiles.set(project.files(ktgenInput.elements.map { set ->
-                set.map { it.asFile }.filter { it.exists() }.map {
-                    if (it.isDirectory) {
-                        it
-                    } else {
-                        when (it.extension) {
-                            "jar", "zip" -> project.zipTree(it)
-                            else -> it
-                        }
-                    }
-                }
-            }))
+            inputFiles.set(ktgenInput)
             runtimeClasspath.set(ktgenImpl)
             outputDir.set(srcDir)
         }

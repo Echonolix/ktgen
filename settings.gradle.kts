@@ -4,5 +4,7 @@ pluginManagement {
     }
 }
 
-include("api")
-include("runtime")
+listOf(":api", ":runtime").forEach {
+    include(it)
+    project(it).name = rootProject.name + it.replace(":", "-")
+}
