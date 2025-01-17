@@ -7,7 +7,7 @@ import org.gradle.api.tasks.SourceSetContainer
 class KtgenPlugin : Plugin<Project> {
     override fun apply(project: Project) {
         val sourceSetContainer = project.extensions.getByType(SourceSetContainer::class.java)
-        val srcDir = project.layout.buildDirectory.dir("generated/sources/ktgen/main/kotlin")
+        val srcDir = project.layout.buildDirectory.dir("generated/ktgen")
 
         val ktgenInput = project.configurations.create("ktgenInput")
         val ktgenImpl = project.configurations.create("ktgen")
