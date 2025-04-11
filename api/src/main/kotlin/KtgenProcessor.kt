@@ -1,4 +1,4 @@
-package org.echonolix.ktgen
+package net.echonolix.ktgen
 
 import java.nio.file.Path
 

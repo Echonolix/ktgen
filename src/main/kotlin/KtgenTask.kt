@@ -1,4 +1,4 @@
-package org.echonolix.ktgen
+package net.echonolix.ktgen
 
 import org.gradle.api.file.DirectoryProperty
 import org.gradle.api.file.FileCollection
@@ -18,7 +18,7 @@ abstract class KtgenTask : JavaExec() {
     abstract val runtimeClasspath: Property<FileCollection>
 
     init {
-        mainClass.set("org.echonolix.ktgen.KtgenRuntime")
+        mainClass.set("net.echonolix.ktgen.KtgenRuntime")
     }
 
     override fun exec() {

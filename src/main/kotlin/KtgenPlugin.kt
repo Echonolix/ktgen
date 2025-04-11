@@ -1,4 +1,4 @@
-package org.echonolix.ktgen
+package net.echonolix.ktgen
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -12,8 +12,8 @@ class KtgenPlugin : Plugin<Project> {
         val ktgenInput = project.configurations.create("ktgenInput")
         val ktgenImpl = project.configurations.create("ktgen")
 
-        project.dependencies.add("ktgen", "org.echonolix:ktgen-api:$version")
-        project.dependencies.add("ktgen", "org.echonolix:ktgen-runtime:$version")
+        project.dependencies.add("ktgen", "net.echonolix:ktgen-api:$version")
+        project.dependencies.add("ktgen", "net.echonolix:ktgen-runtime:$version")
 
         sourceSetContainer.named("main").configure {
             java.srcDir(srcDir)

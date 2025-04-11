@@ -1,5 +1,5 @@
 allprojects {
-    group = "org.echonolix"
+    group = "net.echonolix"
     version = "1.0.0"
 }
 
@@ -38,9 +38,9 @@ java {
 gradlePlugin {
     plugins {
         create("ktgen") {
-            id = "org.echonolix.ktgen"
+            id = "net.echonolix.ktgen"
             displayName = "ktgen"
-            implementationClass = "org.echonolix.ktgen.KtgenPlugin"
+            implementationClass = "net.echonolix.ktgen.KtgenPlugin"
         }
     }
 }
