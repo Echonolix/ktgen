@@ -24,6 +24,10 @@ allprojects {
         mavenCentral()
     }
 
+    dependencies {
+        api(kotlin("reflect"))
+    }
+
     java {
         toolchain {
             languageVersion.set(JavaLanguageVersion.of(8))
