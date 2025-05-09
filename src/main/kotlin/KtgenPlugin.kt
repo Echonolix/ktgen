@@ -33,7 +33,9 @@ class KtgenPlugin : Plugin<Project> {
             outputDir.set(ktgenExtension.outputDir)
         }
 
-        project.tasks.findByName("sourcesJar")?.dependsOn(ktgenTask)
+        project.afterEvaluate {
+            project.tasks.findByName("sourcesJar")?.dependsOn(ktgenTask)
+        }
     }
 
     companion object {
