@@ -1,5 +1,5 @@
 dependencies {
-    val kotlinPoetVersion: String by project
+    val kotlinPoetVersion = providers.gradleProperty("kotlinPoetVersion").get()
     implementation(project(":ktgen-api"))
     runtimeOnly("com.squareup:kotlinpoet:$kotlinPoetVersion")
 }

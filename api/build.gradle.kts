@@ -3,7 +3,7 @@ java {
 }
 
 dependencies {
-    val kotlinPoetVersion: String by project
+    val kotlinPoetVersion = providers.gradleProperty("kotlinPoetVersion").get()
     api("com.squareup:kotlinpoet:$kotlinPoetVersion")
 }
 
