@@ -28,8 +28,10 @@ class KtgenPlugin : Plugin<Project> {
         }
 
         val ktgenTask = project.tasks.register<KtgenTask>("ktgen") {
-            inputFiles.set(ktgenInput)
-            runtimeClasspath.set(ktgenImpl)
+            // File collections retain lazy resolution/build dependencies and can be cached;
+            // a Configuration stored directly in Property<FileCollection> cannot be serialized.
+            inputFiles.set(project.files(ktgenInput))
+            runtimeClasspath.set(project.files(ktgenImpl))
             outputDir.set(ktgenExtension.outputDir)
         }
 
